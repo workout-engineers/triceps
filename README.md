@@ -29,4 +29,4 @@ $ bundle exec slim-lint app/**/*.slim
 
 
 
-samplesamplesamplesamplesample
+samplesamplesample
