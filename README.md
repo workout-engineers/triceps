@@ -1,24 +1,26 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Ruby version
+2.5.1
 
-Things you may want to cover:
+# running backend for dev
+```
+$ git clone git@github.com:workout-engineers/triceps.git
+$ cd triceps
+$ bundle install --path vendor/bundle
+$ bundle exec rake db:create
+$ bundle exec rake db:migrate
+$ bundle exec rails s
+# run server
+```
 
-* Ruby version
+# check your code quality
+- ruby
+```
+$ bundle exec rubocp -a
+```
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- slim
+```
+$ bundle exec slim-lint app/**/*.slim
+```
