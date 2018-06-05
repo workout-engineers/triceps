@@ -24,3 +24,9 @@ $ bundle exec rubocp -a
 ```
 $ bundle exec slim-lint app/**/*.slim
 ```
+
+
+
+
+
+samplesamplesamplesamplesample
