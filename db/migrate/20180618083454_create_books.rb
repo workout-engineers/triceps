@@ -1,9 +1,9 @@
 class CreateBooks < ActiveRecord::Migration[5.1]
   def change
     create_table :books do |t|
-      t.string :name, null: false
-      t.integer :author_id
-      t.text :book_url
+      t.string :name, null: false, comment:"bookの名前"
+      t.integer :author_id, comment:"著者のid"
+      t.text :book_url, comment:"bookのアフィリエイトurl"
 
       t.timestamps
     end
