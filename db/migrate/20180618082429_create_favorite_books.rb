@@ -1,8 +1,8 @@
 class CreateFavoriteBooks < ActiveRecord::Migration[5.1]
   def change
     create_table :favorite_books do |t|
-      t.integer :user_id, null:false, comment:"ユーザーのid"
-      t.integer :book_id, null:false, comment:"bookのid"
+      t.references :user, foreign_key: true, comment:"ユーザーのid"
+      t.references :book, foreign_key: true, comment:"bookのid"
 
       t.timestamps
     end

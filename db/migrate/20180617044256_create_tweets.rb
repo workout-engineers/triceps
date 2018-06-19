@@ -3,8 +3,8 @@ class CreateTweets < ActiveRecord::Migration[5.1]
     create_table :tweets do |t|
       t.text :quote, null: false, comment:"本の一節の引用"
       t.text :comment, comment:"一節への投稿者のコメント"
-      t.integer :book_id, comment:"bookのid"
-      t.integer :user_id, comment:"userのid"
+      t.references :book, foreign_key: true, comment:"bookのid"
+      t.references :user, foreign_key: true, comment:"userのid"
 
       t.timestamps
     end
