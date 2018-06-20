@@ -7,7 +7,7 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 
 # config/application.rb
-module Rails4TwitterClone
+module Triceps
   class Application < Rails::Application
     config.active_record.schema_format = :sql
   end
