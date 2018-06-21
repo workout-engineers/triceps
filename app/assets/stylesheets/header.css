@@ -1,0 +1,181 @@
+/*ヘッダー*/
+
+header{
+  position: relative;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  min-width: 620px;
+  background: #fff;
+  height: 56px;
+  border: solid 1px #888888;
+  box-shadow: 2px 2px 4px gray;
+  color: #444444;
+}
+
+/*ヘッダー(左側)*/
+
+ul{
+  display: inline-block;
+  margin-top: 6px;
+}
+
+.header-menu{
+  display: inline-block;
+  text-align: center;
+  margin-right: 2px;
+  background: #D7EEFF;
+  padding: 10px;
+  width: 98px;
+  border-radius: 30px;
+  box-shadow: 2px 2px 4px #444444 inset;
+}
+
+.left-part-sb{
+  display: none;
+}
+
+.header-menu-sb{
+  display: inline-block;
+  text-align: center;
+  margin-right: 10px;
+  background: #D7EEFF;
+  padding: 6px 10px;
+  border-radius: 30px;
+  box-shadow: 2px 2px 4px #444444 inset;
+}
+
+/*ヘッダー(ロゴ)*/
+
+.logo-sb{
+  background: #66FFFF;
+  display: none;
+  padding: 10px;
+  margin-left: 11px;
+  text-align: center;
+  margin-top: 6px;
+}
+
+.logo{
+  background: #66FFFF;
+  display: inline-block;
+  padding: 10px;
+  text-align: center;
+  margin-top: 6px;
+  position: absolute;
+  right: 50%;
+}
+
+/*ヘッダー(右側)*/
+
+.right-part{
+  display: inline-block;
+  position: absolute;
+  right: 40px;
+  margin-top: 9px;
+}
+
+.search-window{
+  background: #EEEEEE;
+  border: solid 2px #AAAAAA;
+  height: 22px;
+  width: 250px;
+  padding-left: 10px;
+  border-radius: 15px;
+  box-shadow: 1px 1px 1px #444444 inset;
+  font-family: FontAwesome;
+  font-size: 14px;
+}
+
+.tweet-btn{
+  display: inline-block;
+  background: #DDDDDD;
+  padding: 6px 20px;
+  border-radius: 20px;
+  margin-left: 20px;
+  box-shadow: 2px 2px 4px #444444 inset;
+}
+
+/*＜ヘッダー＞ブラウザ<1000px>以下*/
+
+@media screen and (max-width: 1000px) {
+  ul{
+    -webkit-padding-start: 20px;
+  }
+
+  .header-menu{
+    margin-right: 8px;
+  }
+
+  .header-right-part{
+    right: 25px;
+  }
+
+  .search-window{
+    width: 150px;
+  }
+
+  .tweet-btn{
+    padding: 6px 10px;
+  }
+}
+
+/*＜ヘッダー＞ブラウザ<875px>以下*/
+
+@media screen and (max-width: 930px) {
+  ul{
+    -webkit-padding-start: 10px;
+  }
+
+  .logo-sb{
+    display: inline-block;
+  }
+
+  .logo{
+    display: none;
+  }
+}
+
+/*＜ヘッダー＞ブラウザ<750px>以下*/
+
+@media screen and (max-width: 840px) {
+  .left-part{
+    display: none;
+  }
+
+  .left-part-sb{
+    display: inline-block;
+  }
+}
+
+/*スマホバージョン*/
+
+@media screen and (max-width: 430px) {
+  header{
+    height: 45px;
+    width: 100%;
+  }
+
+  .logo-sb{
+    height: 15px;
+  }
+
+  .left-part-sb{
+    display: none;
+  }
+
+  .right-part{
+    right: 38%;
+    margin-top: 1.5px;
+  }
+
+  .serch-window{
+    margin-bottom: 2px;
+  }
+
+  .tweet-btn{
+    margin-left: 6px;
+    margin-top: 2.5px
+  }
+
+}
