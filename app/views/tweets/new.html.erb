@@ -4,7 +4,7 @@
   </div>
   <%= form_for(@tweet) do |f| %>
     <%= f.text_area :quote, placeholder: "好きな一節を入力してください。", class: "tc-inputs quote-create", rows: "4", wrap: "soft" %>
-    <%= f.text_field :book, placeholder: "本の名前を入力してください。", class: "tc-inputs book-name-create" %>
+    <%= f.text_field :book_id, placeholder: "本の名前を入力してください。", class: "tc-inputs book-name-create" %>
     <%= f.text_area :comment, placeholder: "もしあれば、コメントを入力してください", class: "tc-inputs one-comment-create", rows: "4", wrap: "soft" %>
     <%= f.submit "投稿", class: "tc-submit" %>
   <% end %>
