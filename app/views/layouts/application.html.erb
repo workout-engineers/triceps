@@ -8,6 +8,52 @@
   </head>
 
   <body>
+
+    <header>
+    <div class="logo-sb">
+      ロゴ
+    </div>
+    <ul class="left-part">
+      <li class="header-menu"><i class="fas fa-home"></i>投稿一覧</li>
+      <li class="header-menu"><i class="fas fa-bell"></i>通知</li>
+      <li class="header-menu"><i class="fas fa-star"></i>人気の投稿</li>
+    </ul>
+    <div class="left-part-sb">
+      <ul>
+        <li class="header-menu-sb"><i class="fas fa-home"></i></li>
+        <li class="header-menu-sb"><i class="fas fa-bell"></i></li>
+        <li class="header-menu-sb"><i class="fas fa-star"></i></li>
+      </ul>
+      <div class="header-user-info">
+        顔
+      </div>
+    </div>
+    <div class="logo">
+      ロゴ
+    </div>
+    <div class="right-part">
+      <input type="text" class="search-window" placeholder="&#xf002;キーワードで検索">
+      <div class="tweet-btn">
+        投稿する
+      </div>
+    </div>
+    </header>
+
     <%= yield %>
+
+    <footer>
+      <div class="footer-home footer-menu">
+        <i class="fas fa-home"></i>
+      </div>
+      <div class="footer-notice footer-menu">
+        <i class="fas fa-bell"></i>
+      </div>
+      <div class="footer-populars footer-menu">
+        <i class="fas fa-star"></i>
+      </div>
+      <div class="footer-user-icon footer-menu">
+      </div>
+    </footer>
+
   </body>
 </html>
