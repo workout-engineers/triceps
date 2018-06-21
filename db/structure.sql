@@ -160,8 +160,8 @@ CREATE TABLE `tweets` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `quote` text NOT NULL COMMENT '本の一節の引用',
   `comment` text COMMENT '一節への投稿者のコメント',
-  `book` int(11) DEFAULT NULL COMMENT 'bookのid',
-  `user` int(11) DEFAULT NULL COMMENT 'userのid',
+  `book_id` int(11) DEFAULT NULL COMMENT 'bookのid',
+  `user_id` int(11) DEFAULT NULL COMMENT 'userのid',
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
