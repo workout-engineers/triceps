@@ -17,7 +17,7 @@ header{
 
 ul{
   display: inline-block;
-  margin-top: 6px;
+  padding-top: 6px;
 }
 
 .header-menu{
