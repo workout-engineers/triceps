@@ -1,7 +1,7 @@
 class TweetsController < ApplicationController
 
   def index
-    
+
   end
 
   def new
@@ -22,6 +22,7 @@ class TweetsController < ApplicationController
   end
 
   private
+
   def tweet_params
     params.require(:tweet).permit(:quote, :book_id, :comment)
     # .merge(user_id: params[:user_id])
