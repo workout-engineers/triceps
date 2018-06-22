@@ -10,6 +10,7 @@ class TweetsController < ApplicationController
 
   def create
     Tweet.create(tweet_params)
+    # TODO: トップページが出来次第、renderを実装
   end
 
   def edit
