@@ -1,0 +1,47 @@
+!!!
+%html
+  %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}/
+    %title Triceps
+    = csrf_meta_tags
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+
+  %header
+    .logo-sb
+      ロゴ
+    %ul.left-part
+      %li.header-menu
+        %i.fa.fa-home 投稿一覧
+      %li.header-menu
+        %i.fa.fa-bell 通知
+      %li.header-menu
+        %i.fa.fa-star 人気の投稿
+    .left-part-sb
+      %ul
+        %li.header-menu-sb
+          %i.fa.fa-home
+        %li.header-menu-sb
+          %i.fa.fa-bell
+        %li.header-menu-sb
+          %i.fa.fa-star
+      .header-user-info
+        顔
+    .logo
+      ロゴ
+    .right-part
+      %input{type: "text", class: "search-window", placeholder: "&#xf002;キーワードで検索"}
+      .tweet-btn
+        投稿する
+
+  = yield
+
+  %footer
+    .footer-home.footer-menu
+      %i.fa.fa-home
+    .footer-notice.footer-menu
+      %i.fa.fa-bell
+    .footer-populars.footer-menu
+      %i.fa.fa-star
+    .footer-user-icon.footer-menu
