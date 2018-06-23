@@ -23,3 +23,4 @@
 
 # Ignore Credentia data
 .env
+amazon_access_key.csv
