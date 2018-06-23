@@ -25,6 +25,7 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 gem 'slim-rails'
+gem 'amazon-ecs'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -42,6 +43,7 @@ group :development, :test do
   gem 'rubocop'
   gem 'selenium-webdriver'
   gem 'slim_lint'
+  gem 'dotenv-rails'
 end
 
 group :development do
