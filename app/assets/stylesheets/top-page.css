@@ -1,0 +1,90 @@
+body{
+  background: #D7EEFF;
+  min-width: 600px;
+  margin: 0px;
+}
+
+ul{
+  -webkit-margin-before: 0px;
+  -webkit-margin-after: 0px;
+  -webkit-padding-start: 40px;
+}
+
+/*スマホver以外では表示しないもの*/
+
+@media screen and (min-width: 431px) {
+
+  footer{
+    display: none;
+  }
+
+  .footer-no-login{
+    display: none;
+  }
+
+}
+
+/*スマホver*/
+
+@media screen and (max-width: 430px) {
+
+  body{
+    min-width: 0;
+  }
+
+  .wrapper{
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .tweets{
+    width: 100%;
+  }
+
+  .tweet{
+    width: 100%;
+  }
+
+  .face{
+    width: 13%;
+    height: 47px;
+  }
+
+  .content{
+    width: 87%;
+    margin-right: 10px;
+  }
+
+  .user-name{
+    padding-top: 23px;
+  }
+
+  .quote{
+    width: 100%;
+    padding-top: 10px;
+  }
+
+  footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    background: #fff;
+    height: 45px;
+    width: 100%;
+    margin-top: 5px;
+    border-top: solid 1px #333;
+  }
+
+  .footer-menu{
+    font-size: 25px;
+
+  }
+
+  .footer-user-icon{
+    height: 35px;
+    width: 35px;
+    border: solid 1px #333;
+    border-radius: 20px;
+  }
