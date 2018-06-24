@@ -19,6 +19,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'slim-rails'
 gem "font-awesome-rails"
 gem "haml-rails"
+gem "devise"
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
