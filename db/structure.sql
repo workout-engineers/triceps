@@ -172,11 +172,6 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL COMMENT 'ユーザーの名前',
-  `email` varchar(255) NOT NULL COMMENT 'ユーザーのemail',
-  `picture` varchar(255) DEFAULT NULL COMMENT 'ユーザーの顔写真',
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
