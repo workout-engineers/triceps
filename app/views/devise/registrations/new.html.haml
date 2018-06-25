@@ -1,30 +1,32 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "sign-up"}) do |f|
   = devise_error_messages!
 
-  .field
-    = f.label :name
-    %br/
-    = f.text_field :name, autofocus: true
+  .sign-up-logo 新規登録
 
-  .field
-    = f.label :email
+  .field.su-name
+    = f.label "名前(ニックネーム)", class: "su-name-logo"
     %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
+    = f.text_field :name, autofocus: true, class: "su-name-input"
 
-  .field
-    = f.label :password
+  .field.su-email
+    = f.label "メールアドレス", class: "su-email-logo"
+    %br/
+    = f.email_field :email, autofocus: true, autocomplete: "email", class: "su-email-input"
+
+  .field.su-password
+    = f.label "パスワード", class: "su-password-logo"
     - if @minimum_password_length
       %em
-        (#{@minimum_password_length} characters minimum)
+        (#{@minimum_password_length} 文字以上)
     %br/
-    = f.password_field :password, autocomplete: "off"
+    = f.password_field :password, autocomplete: "off", class: "su-password-input"
 
-  .field
-    = f.label :password_confirmation
+  .field.su-passwordcf
+    = f.label "パスワード(確認)", class: "su-passwordcf-logo"
     %br/
-    = f.password_field :password_confirmation, autocomplete: "off"
+    = f.password_field :password_confirmation, autocomplete: "off", class: "su-passwordcf-input"
 
   .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+    = f.submit "登録する", class: "su-submit-btn"
+  = render "devise/shared/links"
+
