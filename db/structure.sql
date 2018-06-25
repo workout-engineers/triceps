@@ -184,6 +184,11 @@ CREATE TABLE `users` (
   `last_sign_in_at` datetime DEFAULT NULL,
   `current_sign_in_ip` varchar(255) DEFAULT NULL,
   `last_sign_in_ip` varchar(255) DEFAULT NULL,
+  `confirmation_token` varchar(255) DEFAULT NULL,
+  `confirmed_at` datetime DEFAULT NULL,
+  `confirmation_sent_at` datetime DEFAULT NULL,
+  `unconfirmed_email` varchar(255) DEFAULT NULL,
+  `agreement` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_users_on_email` (`email`),
   UNIQUE KEY `index_users_on_reset_password_token` (`reset_password_token`)
@@ -212,6 +217,7 @@ INSERT INTO `schema_migrations` (version) VALUES
 ('20180618085915'),
 ('20180618092727'),
 ('20180618093114'),
-('20180624081812');
+('20180624081812'),
+('20180625060037');
 
 

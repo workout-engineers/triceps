@@ -26,6 +26,10 @@
     %br/
     = f.password_field :password_confirmation, autocomplete: "off", class: "su-passwordcf-input"
 
+  .field.agreement
+    = f.check_box :agreement ,{},checked_value = "true",unchecked_value = "false"
+    = f.label '利用規約に同意する。'
+
   .actions
     = f.submit "登録する", class: "su-submit-btn"
   = render "devise/shared/links"
