@@ -171,5 +171,195 @@
 }
 
 
+/*スマホver以外では表示しないもの*/
 
+@media screen and (min-width: 431px) {
+
+  .sp-userp-favorites{
+    display: none;
+  }
+
+}
+
+@media screen and (max-width: 430px) {
+
+  /*ユーザー情報*/
+
+  .user-page-info{
+    width: 95%;
+    min-width: 0;
+    margin: 0 auto;
+    padding-top: 70px;
+  }
+
+  /*ユーザー情報スクロール後*/
+
+  .user-info-scr{
+    margin-top: 47px;
+    z-index: 1;
+  }
+
+  /*ユーザー情報ステータス*/
+
+  .userp-following{
+    border-radius: 20px;
+    font-size: 12px;
+    box-shadow: 2px 2px 4px #444444 inset;
+  }
+
+  .userp-notyetfollow{
+    border-radius: 20px;
+    font-size: 12px;
+    box-shadow: 2px 2px 4px #444444 inset;
+  }
+
+  .userp-mysetting{
+    border-radius: 2px;
+    font-size: 12px;
+    box-shadow: 2px 2px 4px #444444 inset;
+  }
+
+  /*PCverで左サイドの要素*/
+
+  .userp-face-name{
+    padding-right: 3%;
+  }
+
+  .userp-face{
+    height: 60px;
+    width: 60px;
+  }
+
+  .userp-name{
+    font-size: 13px;
+  }
+
+  /*中央サイド*/
+    /*投稿数、フォロー数、フォロワー数*/
+  .userp-counts{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+  }
+
+  .userp-follow-count ,.userp-follower-count{
+    margin-top: 0;
+  }
+
+  .userp-tweets-count-logo ,.userp-follow-count-logo ,.userp-follower-count-logo{
+    color: #555;
+    font-weight: bold;
+    font-size: 15px;
+    -webkit-text-stroke: 0.2px #000;
+  }
+
+  .userp-tweets-count-number ,.userp-follow-count-number ,.userp-follower-count-number{
+    margin-top: 3px;
+    font-size: 13px;
+  }
+
+    /*フェイバリッツ*/
+  .sp-userp-favorites{
+    padding: 5px 0 30px 0;
+    padding-left: 5%;
+    margin-top: 5px;
+  }
+
+  .userp-favorite-authors-logo ,.userp-favorite-books-logo{
+    color: #555;
+    font-weight: bold;
+    font-size: 15px;
+    -webkit-text-stroke: 0.2px #000;
+  }
+
+  .userp-favorite-authors ,.userp-favorite-books{
+    margin-top: 3px;
+    font-size: 12px;
+  }
+
+  .userp-favorite-books-logo{
+    margin-top: 10px;
+  }
+
+
+  /*PCverで右サイドの要素*/
+
+  .userp-favorites{
+    display: none;
+  }
+
+  /*ツイート一覧*/
+
+  .us-tweets{
+    width: 95%;
+    margin: 0 auto;
+  }
+
+}
+
+/*スマホver*/
+
+@media screen and (max-width: 430px) {
+
+  body{
+    min-width: 0;
+  }
+
+  .wrapper{
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .tweets{
+    width: 100%;
+  }
+
+  .tweet{
+    width: 100%;
+  }
+
+  .face{
+    width: 13%;
+    height: 47px;
+  }
+
+  .content{
+    width: 87%;
+    margin-right: 10px;
+  }
+
+  .user-name{
+    padding-top: 23px;
+  }
+
+  .quote{
+    width: 100%;
+    padding-top: 10px;
+  }
+
+  footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    background: #fff;
+    height: 45px;
+    width: 100%;
+    margin-top: 5px;
+    border-top: solid 1px #333;
+  }
+
+  .footer-menu{
+    font-size: 25px;
+
+  }
+
+  .footer-user-icon{
+    height: 35px;
+    width: 35px;
+    border: solid 1px #333;
+    border-radius: 20px;
+  }
+}
 

@@ -1,0 +1,108 @@
+/*右側のユーザー情報*/
+
+.user-info{
+  display: inline-block;
+  position: absolute;
+  position: fixed;
+  background: #fff;
+  width: 270px;
+  margin: 3px 0px 0px 6px;
+  border: solid 1px #aaa;
+  border-radius: 8px;
+  font-family: 'MS Gothic';
+  box-shadow: 2px 2px 4px gray;
+  color: #333333;
+}
+
+.user-face-name{
+  display: flex;
+  align-items: center;
+  margin: 10px 0 0 10px;
+}
+
+.user-face-right{
+  height: 60px;
+  width: 60px;
+  border-radius: 30px;
+  border: solid 1px #aaa;
+}
+
+.user-name-right{
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+/*投稿数、フォロー、フォロワー*/
+
+.user-counts{
+  margin: 10px 0 0 10px;
+}
+
+.tweet-counts ,.follow-counts ,.follower-counts{
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.tweet-tag ,.follow-tag ,.follower-tag{
+  color: gray;
+  font-weight: bold;
+  font-size: 17px;
+  -webkit-text-stroke: 0.2px #000;
+}
+
+.tweet-count-number ,.follow-count-number ,.follower-count-number{
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+}
+
+/*好きな著者、本*/
+
+.user-favorites{
+  margin: 10px 0 3px 10px;
+}
+
+.favorite-authors-tag ,.favorite-books-tag{
+  color: gray;
+  font-weight: bold;
+  font-size: 17px;
+  -webkit-text-stroke: 0.2px #000;
+}
+
+.favorite-authors-name ,.favorite-books-name{
+  font-size: 12px;
+  margin-bottom: 13px;
+}
+
+.favorite-books{
+  margin-top: 3px;
+}
+
+.fav-book{
+  text-decoration: underline;
+  color: #0066FF;
+}
+
+/*ブラウザが840px以下の時にはヘッダーにユーザー情報を出す*/
+
+.header-user-info{
+  display: inline-block;
+  position: absolute;
+  top: 4px;
+  left: 232px;
+  height: 45px;
+  width: 45px;
+  border: solid 1px #888;
+  border-radius: 25px;
+  text-align: center;
+}
+
+@media screen and (max-width: 840px) {
+  .user-info{
+    display: none;
+  }
+
+  .wrapper{
+    width: 550px;
+  }
+}
