@@ -1,0 +1,157 @@
+.sign-up{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 130px;
+}
+
+.sign-up-logo{
+  font-weight: bold;
+  font-size: 60px;
+}
+
+.su-name ,.su-email ,.su-password ,.su-passwordcf{
+  margin-top: 10px;
+}
+
+.su-name-input ,.su-email-input ,.su-password-input ,.su-passwordcf-input{
+  height: 30px;
+  width: 350px;
+  padding-left: 10px;
+  border: solid 2px #666;
+  border-radius: 15px;
+  font-size: 20px;
+}
+
+.agreement{
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.smallcheckbox{
+  height: 16px;
+  width: 20px;
+  margin-top: 5px;
+}
+
+.rules{
+  margin-left: 5px;
+  margin-right: 2px;
+  text-decoration: underline;
+  color: #0066FF;
+}
+
+.su-submit-btn{
+  padding: 2px 70px;
+  background: #0066FF;
+  margin-top: 30px;
+  border-style: none;
+  border-radius: 15px;
+  border: solid 1px #666;
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.devise-login-btn{
+  margin-top: 9px;
+  font-size: 14px;
+  color: #0066FF;
+}
+
+/*ヘッダーのsbでの顔なし*/
+
+.header-user-info{
+  display: none;
+}
+
+/* ↑↑↑↑新規登録↑↑↑↑ */
+
+/* ↓↓↓↓ログイン↓↓↓↓ */
+
+.log-in-or{
+  font-size: 12px;
+  margin: 0 5px;
+}
+
+.forget-password{
+  display: flex;
+  margin-top: 20px;
+  font-size: 13px;
+}
+
+.to-password-reset{
+  margin-left: 1px;
+  text-decoration: underline;
+  color: #0066FF;
+}
+
+.li-submit-btn{
+  padding: 2px 70px;
+  background: #CC3333;
+  margin-top: 20px;
+  border-style: none;
+  border-radius: 15px;
+  border: solid 1px #666;
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
+}
+
+/* ↓↓↓↓パスワードリセット↓↓↓↓ */
+/*-------------------------*/
+
+@media screen and (max-width: 430px) {
+
+/*新規登録*/
+
+  .sign-up{
+    padding-top: 60px;
+  }
+
+  .sign-up-logo{
+    font-size: 30px;
+  }
+
+  .su-name ,.su-email ,.su-password ,.su-passwordcf{
+    margin-top: 7px;
+  }
+
+  .su-name-logo ,.su-email-logo ,.su-password-logo ,.su-passwordcf-logo{
+    font-size: 12px;
+  }
+
+  .su-name-input ,.su-email-input ,.su-password-input ,.su-passwordcf-input{
+    height: 22px;
+    width: 280px;
+    padding-left: 10px;
+    border: solid 2px #666;
+    border-radius: 15px;
+    font-size: 20px;
+  }
+
+  .agreement{
+    margin-top: 15px;
+  }
+
+  .su-submit-btn{
+    padding: 1px 40px;
+    margin-top: 20px;
+    font-size: 17px;
+  }
+
+    /*フッターの調整*/
+
+  .header-log-in{
+    display: block;
+  }
+
+  /*ログインページ*/
+
+  .li-submit-btn{
+    padding: 1px 40px;
+    margin-top: 20px;
+    font-size: 17px;
+  }
+}

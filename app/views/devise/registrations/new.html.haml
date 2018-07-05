@@ -1,0 +1,36 @@
+= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "sign-up"}) do |f|
+  = devise_error_messages!
+
+  .sign-up-logo 新規登録
+
+  .field.su-name
+    = f.label "名前(ニックネーム)", class: "su-name-logo"
+    %br/
+    = f.text_field :name, autofocus: true, class: "su-name-input"
+
+  .field.su-email
+    = f.label "メールアドレス", class: "su-email-logo"
+    %br/
+    = f.email_field :email, autofocus: true, autocomplete: "email", class: "su-email-input"
+
+  .field.su-password
+    = f.label "パスワード", class: "su-password-logo"
+    - if @minimum_password_length
+      %em
+        (#{@minimum_password_length} 文字以上)
+    %br/
+    = f.password_field :password, autocomplete: "off", class: "su-password-input"
+
+  .field.su-passwordcf
+    = f.label "パスワード(確認)", class: "su-passwordcf-logo"
+    %br/
+    = f.password_field :password_confirmation, autocomplete: "off", class: "su-passwordcf-input"
+
+  .field.agreement
+    = f.check_box :agreement ,{},checked_value = "true",unchecked_value = "false"
+    = f.label '利用規約に同意する。'
+
+  .actions
+    = f.submit "登録する", class: "su-submit-btn"
+  = render "devise/shared/links"
+

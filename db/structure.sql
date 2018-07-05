@@ -173,11 +173,25 @@ DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL COMMENT 'ユーザーの名前',
-  `email` varchar(255) NOT NULL COMMENT 'ユーザーのemail',
+  `email` varchar(255) NOT NULL DEFAULT '' COMMENT 'ユーザーのemail',
+  `encrypted_password` varchar(255) NOT NULL DEFAULT '' COMMENT 'パスワード',
   `picture` varchar(255) DEFAULT NULL COMMENT 'ユーザーの顔写真',
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  PRIMARY KEY (`id`)
+  `reset_password_token` varchar(255) DEFAULT NULL,
+  `reset_password_sent_at` datetime DEFAULT NULL,
+  `remember_created_at` datetime DEFAULT NULL,
+  `sign_in_count` int(11) NOT NULL DEFAULT '0',
+  `current_sign_in_at` datetime DEFAULT NULL,
+  `last_sign_in_at` datetime DEFAULT NULL,
+  `current_sign_in_ip` varchar(255) DEFAULT NULL,
+  `last_sign_in_ip` varchar(255) DEFAULT NULL,
+  `confirmation_token` varchar(255) DEFAULT NULL,
+  `confirmed_at` datetime DEFAULT NULL,
+  `confirmation_sent_at` datetime DEFAULT NULL,
+  `unconfirmed_email` varchar(255) DEFAULT NULL,
+  `agreement` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `index_users_on_email` (`email`),
+  UNIQUE KEY `index_users_on_reset_password_token` (`reset_password_token`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -202,6 +216,8 @@ INSERT INTO `schema_migrations` (version) VALUES
 ('20180618084746'),
 ('20180618085915'),
 ('20180618092727'),
-('20180618093114');
+('20180618093114'),
+('20180624081812'),
+('20180625060037');
 
 
