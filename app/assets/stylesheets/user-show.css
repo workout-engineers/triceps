@@ -1,0 +1,175 @@
+.user-page-info{
+  display: flex;
+  padding-top: 90px;
+  justify-content: center;
+  min-width: 730px;
+}
+
+/*ユーザー情報ステータス*/
+
+.userp-status{
+  margin-top: 15px;
+}
+
+.userp-following{
+  display: none;
+  background: silver;
+  padding: 5px 0;
+  border-radius: 20px;
+  box-shadow: 2px 2px 4px #444444 inset;
+}
+
+.userp-notyetfollow{
+  /*display: none;*/
+  background: #fff;
+  padding: 5px 0;
+  border-radius: 20px;
+  box-shadow: 2px 2px 4px #444444 inset;
+}
+
+.userp-mysetting{
+  display: none;
+  background: silver;
+  padding: 5px 0;
+  border-radius: 2px;
+  box-shadow: 2px 2px 4px #444444 inset;
+}
+
+/*ユーザー情報*/
+  /*左サイド*/
+
+.userp-face-name{
+  text-align: center;
+  padding-right: 5%;
+}
+
+.userp-face{
+  display: inline-block;
+  height: 120px;
+  width: 120px;
+  border: solid 1px #888;
+  border-radius: 60px;
+}
+
+.userp-name{
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
+  /*中央サイド*/
+
+.userp-counts{
+  text-align: center;
+  margin-top: 20px;
+  margin-right: 5%;
+}
+
+.userp-follow-count ,.userp-follower-count{
+  margin-top: 10px;
+}
+
+.userp-tweets-count-logo ,.userp-follow-count-logo ,.userp-follower-count-logo{
+  color: #555;
+  font-weight: bold;
+  font-size: 20px;
+  -webkit-text-stroke: 0.2px #000;
+}
+
+.userp-tweets-count-number ,.userp-follow-count-number ,.userp-follower-count-number{
+  margin-top: 3px;
+  font-size: 16px;
+}
+
+  /*右サイド*/
+
+.userp-favorites{
+  padding: 10px 0 60px 0;
+  padding-left: 5%;
+  margin-top: 5px;
+  border-left: 3px dashed #888;
+}
+
+.userp-favorite-authors-logo ,.userp-favorite-books-logo{
+  color: #555;
+  font-weight: bold;
+  font-size: 20px;
+  -webkit-text-stroke: 0.2px #000;
+}
+
+.userp-favorite-books-logo{
+  margin-top: 30px;
+}
+
+.userp-favorite-authors ,.userp-favorite-books{
+  margin-top: 3px;
+  font-size: 14px;
+}
+
+.userp-fav-book{
+  text-decoration: underline;
+  color: #0066FF;
+}
+
+/*ユーザー情報スクロール後*/
+
+.user-info-scr{
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  background: #fff;
+  height: 60px;
+  width: 100%;
+  border: solid 1px
+  margin: 0 auto;
+  margin-top: 58px;
+  border: solid 1px #888888;
+  box-shadow: 2px 2px 4px gray;
+  z-index: 1;
+}
+
+.scr-user-face{
+  height: 50px;
+  width: 50px;
+  border: solid 1px #666;
+  border-radius: 25px;
+  margin-top: 4px;
+}
+
+.scr-user-name{
+  font-weight: bold;
+  font-size: 16px;
+  margin: 18px 0 0 20px;
+}
+
+.scr-user-status{
+  margin: 11px 0 0 30px;
+}
+
+.scr-status{
+  padding: 7px 30px;
+}
+
+/*ユーザーページのツイート一覧*/
+
+.us-tweets{
+  display: flex;
+  flex-direction: column;
+  margin-top: 18px;
+}
+
+.tweet{
+  margin: 0 auto;
+  margin-bottom: 3px;
+}
+
+/*スモールブラウザでのユーザーページへの導線なし*/
+
+.header-user-info{
+  display: none;
+}
+
+
+
+
