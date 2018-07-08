@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
   validates :name, presence: {message: '名前を入力してください'}
   validates :agreement, presence: {message: "利用規約への同意が必要です。"}
+
+  has_many :tweets
 end
