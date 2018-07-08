@@ -6,14 +6,17 @@
     = f.label "メールアドレス", class: "su-name-logo"
     %br/
     = f.email_field :email, autofocus: true, autocomplete: "email", class: "su-email-input"
+
   .field.su-password
     = f.label "パスワード", class: "su-password-logo"
     %br/
     = f.password_field :password, autocomplete: "off", class: "su-password-input"
+
   - if devise_mapping.rememberable?
     .field.remember_me_place
       = f.check_box :remember_me
       = f.label :ログイン状態を保存する
+
   .actions
     = f.submit "ログイン", class: "su-submit-btn"
   = render "devise/shared/links"
