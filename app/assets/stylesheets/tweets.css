@@ -1,0 +1,125 @@
+/*投稿と右ユーザー情報を含めたラッパー*/
+
+.wrapper{
+  width: 840px;
+  margin-left: 25%;
+  padding-top: 58px;
+}
+
+@media screen and (max-width: 1300px) {
+  .wrapper{
+    margin: 0 auto;
+  }
+}
+
+/*投稿*/
+
+.tweets{
+  display: inline-block;
+  z-index: 2;
+  width: 550px;
+}
+
+.tweet{
+  background: #fff;
+  width: 550px;
+  margin-top: 3px;
+  border: solid 1px #aaa;
+  border-radius: 8px;
+  font-family: 'MS Gothic';
+  box-shadow: 2px 2px 4px gray;
+  color: #333333;
+  display: flex;
+}
+
+.face{
+  height: 60px;
+  width: 60px;
+  border: solid 1px #aaa;
+  border-radius: 30px;
+  margin: 10px 0 0 10px;
+}
+
+.content{
+  width: 400px;
+  margin-left: 15px;
+}
+
+.user-name{
+  display: inline-block;
+  padding-top: 30px;
+  font-weight: bold;
+}
+
+.quote{
+  display: inline-block;
+  padding-top: 15px;
+  font-size: 13px;
+}
+
+.source{
+  padding-top: 3px;
+  text-align: right;
+  text-decoration: underline;
+  font-size: 10px;
+  color: #0066FF;
+}
+
+.book-title{
+  display: inline-block;
+  text-decoration: underline;
+  padding-left: 10px;
+}
+
+.author-name{
+  display: inline-block;
+  text-decoration: underline;
+}
+
+.evaluation{
+  display: inline-block;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.super-iine{
+  display: inline-block;
+  padding-right: 6px;
+}
+
+.super-iine-icon{
+  display: inline-block;
+}
+
+.super-iine-count{
+  display: inline-block;
+  font-size: 9px;
+}
+
+.nomal-iine{
+  display: inline-block;
+  padding-right: 6px;
+}
+
+.nomal-iine-icon{
+  display: inline-block;
+}
+
+.nomal-iine-count{
+  display: inline-block;
+  font-size: 9px;
+}
+
+.share{
+  display: inline-block;
+  padding-right: 6px;
+}
+
+.share-icon{
+  display: inline-block;
+}
+
+.share-count{
+  display: inline-block;
+  font-size: 9px;
+}

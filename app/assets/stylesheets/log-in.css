@@ -1,0 +1,19 @@
+.new_user{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 130px;
+}
+
+.remember_me_place{
+  margin-top: 35px;
+}
+
+.links_registrations{
+  margin-top: 10px;
+}
+
+p{
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0em;
+}
