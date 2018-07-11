@@ -1,6 +1,8 @@
 /*ヘッダー*/
 
 header{
+  display: flex;
+  align-items: center;
   position: relative;
   position: fixed;
   z-index: 1;
@@ -16,14 +18,13 @@ header{
 /*ヘッダー(左側)*/
 
 ul{
-  display: inline-block;
-  padding-top: 6px;
+  display: flex;
+  list-style: none;
 }
 
 .header-menu{
-  display: inline-block;
   text-align: center;
-  margin-right: 2px;
+  margin-right: 6px;
   background: #D7EEFF;
   padding: 10px;
   width: 98px;
@@ -35,13 +36,16 @@ ul{
   display: none;
 }
 
+.left-part-sb ul{
+  display: flex;
+}
+
 .header-menu-sb{
-  display: inline-block;
   text-align: center;
   margin-right: 10px;
   background: #D7EEFF;
-  padding: 6px 10px;
-  border-radius: 30px;
+  padding: 10px 15px;
+  border-radius: 40px;
   box-shadow: 2px 2px 4px #444444 inset;
 }
 
@@ -53,15 +57,12 @@ ul{
   padding: 10px;
   margin-left: 11px;
   text-align: center;
-  margin-top: 6px;
 }
 
 .logo{
   background: #66FFFF;
-  display: inline-block;
   padding: 10px;
   text-align: center;
-  margin-top: 6px;
   position: absolute;
   right: 50%;
 }
@@ -69,10 +70,8 @@ ul{
 /*ヘッダー(右側)*/
 
 .right-part{
-  display: inline-block;
   position: absolute;
   right: 40px;
-  margin-top: 9px;
 }
 
 .search-window{
@@ -144,7 +143,7 @@ ul{
   }
 
   .left-part-sb{
-    display: inline-block;
+    display: flex;
   }
 }
 
@@ -165,17 +164,13 @@ ul{
   }
 
   .right-part{
+    display: flex;
+    align-items: center;
     right: 38%;
-    margin-top: 1.5px;
-  }
-
-  .serch-window{
-    margin-bottom: 2px;
   }
 
   .tweet-btn{
     margin-left: 6px;
-    margin-top: 2.5px
   }
 
 }
