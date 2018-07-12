@@ -3,10 +3,11 @@
   .content
     .user-name
       = @user.name
-    .fa.fa-bars
-    .tweet-edit-destroy
-      = link_to "編集", edit_tweet_path(tweet), class: "tweet-edit"
-      = link_to "削除", tweet_path(tweet), method: :delete, class: "tweet_destroy"
+    - if tweet.user_id == current_user.id
+      .fa.fa-bars
+      .tweet-edit-destroy
+        = link_to "編集", edit_tweet_path(tweet), class: "tweet-edit"
+        = link_to "削除", tweet_path(tweet), method: :delete, class: "tweet_destroy"
     .quote
       = tweet.quote
     .source
