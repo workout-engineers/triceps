@@ -45,6 +45,8 @@ ul{
 
 .header-my-menu{
   position: absolute;
+  display: flex;
+  flex-direction: column;
   top: 30px;
   background: #ddd;
   font-size: 18px;

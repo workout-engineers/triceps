@@ -7,12 +7,12 @@
     %li.header-menu
       %i.fa.fa-star 人気
   .header-user-menu
-    岩崎一朗
+    = current_user.name
     %i.fa.fa-caret-down
     .header-my-menu
-      .to-mypage マイページ
-      .to-notice 通知
-      .to-logout ログアウト
+      = link_to "マイページ", user_path(current_user), class: ".to-mypage"
+      = link_to "通知", class: ".to-notice"
+      = link_to "ログアウト",destroy_user_session_path(current_user), method: :delete, class: ".to-logout"
   .left-part-sb
     %ul
       %li.header-menu-sb
@@ -20,12 +20,12 @@
       %li.header-menu-sb
         %i.fa.fa-star
     .header-user-menu-sb
-      岩崎一朗
+      = current_user.name
       %i.fa.fa-caret-down
       .header-my-menu
-        .to-mypage マイページ
-        .to-notice 通知
-        .to-logout ログアウト
+        = link_to "マイページ", user_path(current_user), class: ".to-mypage"
+        = link_to "通知", class: ".to-notice"
+        = link_to "ログアウト",destroy_user_session_path(current_user), method: :delete, class: ".to-logout"
     .header-user-info
       顔
   .logo
