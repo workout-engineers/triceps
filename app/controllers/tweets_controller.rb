@@ -26,7 +26,6 @@ class TweetsController < ApplicationController
 
   def tweet_params
     params.require(:tweet).permit(:quote, :book_id, :comment).merge(user_id: current_user.id)
-    # TODO: ユーザー登録の機能が出来次第、コメントアウト解除
   end
 
 end
