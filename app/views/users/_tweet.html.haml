@@ -5,8 +5,8 @@
       = @user.name
     .fa.fa-bars
     .tweet-edit-destroy
-      .tweet-edit 編集
-      .tweet-destroy 削除
+      = link_to "編集", edit_tweet_path(tweet), class: "tweet-edit"
+      = link_to "削除", edit_tweet_path(tweet), method: :delete, class: "tweet_destroy"
     .quote
       = tweet.quote
     .source

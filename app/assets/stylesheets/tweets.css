@@ -70,7 +70,8 @@
   text-align: center;
   font-size: 12px;
   border-radius: 2px;
-  /*display: none;*/
+  display: flex;
+  flex-direction: column;
 }
 
 .tweet-edit{
@@ -79,7 +80,7 @@
 }
 
 .tweet-destroy{
-  padding: 2px 5px;
+  padding: 2px 5px 3px;
 }
 
 /*ーーーー*/
