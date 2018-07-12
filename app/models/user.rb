@@ -6,5 +6,5 @@ class User < ApplicationRecord
   validates :name, presence: {message: '名前を入力してください'}
   validates :agreement, presence: {message: "利用規約への同意が必要です。"}
 
-  has_many :tweets
+  has_many :tweets, dependent: :destroy
 end
