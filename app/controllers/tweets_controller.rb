@@ -1,6 +1,7 @@
 class TweetsController < ApplicationController
   before_action :logged_in_user, only: [:new, :create]
   before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :set_tweet, only: [:update, :destroy]
 
   def index
   end
@@ -19,13 +20,11 @@ class TweetsController < ApplicationController
   end
 
   def update
-    tweet = Tweet.find(params[:id])
-    tweet.update(tweet_params)
+    @tweet.update(tweet_params)
   end
 
   def destroy
-    tweet = Tweet.find(params[:id])
-    tweet.destroy if tweet.user_id == current_user.id
+    @tweet.destroy
   end
 
   def show
@@ -46,10 +45,14 @@ class TweetsController < ApplicationController
     end
 
     def correct_user
-      tweet = Tweet.find(params[:id])
-      unless tweet.user_id == current_user.id
+      @tweet = Tweet.find(params[:id])
+      unless @tweet.user_id == current_user.id
         redirect_to user_path(current_user)
       end
+    end
+
+    def set_tweet
+      @tweet = Tweet.find(params[:id])
     end
 
 end
