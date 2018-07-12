@@ -329,12 +329,22 @@
   }
 
   .user-name{
+    display: block;
     padding-top: 23px;
+  }
+
+  .fa-bars{
+    top: 22px;
+    right: 8px;
   }
 
   .quote{
     width: 100%;
-    padding-top: 10px;
+    padding-top: 15px;
+  }
+
+  .source{
+    margin: 10px 20px 5px 0;
   }
 
   footer{

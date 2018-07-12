@@ -41,19 +41,26 @@
 }
 
 .content{
+  position: relative;
   width: 400px;
   margin-left: 15px;
 }
 
 .user-name{
-  display: inline-block;
   padding-top: 30px;
   font-weight: bold;
 }
 
+.fa-bars{
+  position: absolute;
+  top: 30px;
+  right: 1px;
+  color: #bbb;
+}
+
 .quote{
   display: inline-block;
-  padding-top: 15px;
+  padding-top: 10px;
   font-size: 13px;
 }
 
