@@ -1,5 +1,6 @@
 class TweetsController < ApplicationController
   before_action :logged_in_user, only: [:new, :create]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   def index
   end
@@ -41,6 +42,13 @@ class TweetsController < ApplicationController
         flash[:danger] = "投稿するにはログインが必要です。"
         redirect_to new_user_registration_path
         #TODO 人気の投稿一覧画面ができたらリダイレクト先変更
+      end
+    end
+
+    def correct_user
+      tweet = Tweet.find(params[:id])
+      unless tweet.user_id == current_user.id
+        redirect_to user_path(current_user)
       end
     end
 
