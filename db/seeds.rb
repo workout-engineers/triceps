@@ -1,13 +1,13 @@
-99.times do |n|
+99.times do |_n|
   users = [7]
 
-  quote  = Faker::Lorem.sentence
+  quote = Faker::Lorem.sentence
   comment = Faker::Lorem.sentence
   book_id = 1
   user_id = users.sample
 
   Tweet.create!(quote: quote,
-               comment: comment,
-               book_id: book_id,
-               user_id: user_id)
+                comment: comment,
+                book_id: book_id,
+                user_id: user_id)
 end
