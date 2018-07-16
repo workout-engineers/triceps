@@ -1,5 +1,5 @@
 class TweetsController < ApplicationController
-  before_action :logged_in_user, only: [:new, :create]
+  before_action :auth_user, only: [:new, :create]
   before_action :correct_user, only: [:edit, :update, :destroy]
   before_action :set_tweet, only: [:update, :destroy]
 
@@ -35,7 +35,7 @@ class TweetsController < ApplicationController
       params.require(:tweet).permit(:quote, :book_id, :comment).merge(user_id: current_user.id)
     end
 
-    def logged_in_user
+    def auth_user
       unless current_user
         flash[:danger] = "投稿するにはログインが必要です。"
         redirect_to new_user_registration_path
