@@ -1,15 +1,16 @@
 class TweetsController < ApplicationController
-  before_action :auth_user, only: %i[new create]
   before_action :correct_user, only: %i[edit update destroy]
   before_action :set_tweet, only: %i[update destroy]
 
   def index; end
 
   def new
+    return auth_user unless current_user
     @tweet = Tweet.new
   end
 
   def create
+    return auth_user unless current_user
     Tweet.create(tweet_params)
     # TODO: トップページが出来次第、renderを実装
   end
