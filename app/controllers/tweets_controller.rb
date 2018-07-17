@@ -43,15 +43,6 @@ class TweetsController < ApplicationController
     end
   end
 
-  def correct_user
-    @tweet = Tweet.find(params[:id])
-    if @tweet.user_id == current_user.id
-      return true
-    else
-      redirect_to user_path(current_user)
-    end
-  end
-
   def set_tweet
     @tweet = Tweet.find(params[:id])
   end
