@@ -1,5 +1,4 @@
 class TweetsController < ApplicationController
-  before_action :correct_user, only: %i[edit update destroy]
   before_action :set_tweet, only: %i[update destroy]
 
   def index; end
@@ -15,14 +14,17 @@ class TweetsController < ApplicationController
     # TODO: トップページが出来次第、renderを実装
   end
 
-  def edit; end
+  def edit
+    if correct_user
+    end
+  end
 
   def update
-    @tweet.update(tweet_params)
+    @tweet.update(tweet_params) if correct_user
   end
 
   def destroy
-    @tweet.destroy
+    @tweet.destroy if correct_user
   end
 
   def show; end
@@ -43,7 +45,11 @@ class TweetsController < ApplicationController
 
   def correct_user
     @tweet = Tweet.find(params[:id])
-    redirect_to user_path(current_user) unless @tweet.user_id == current_user.id
+    if @tweet.user_id == current_user.id
+      return true
+    else
+      redirect_to user_path(current_user)
+    end
   end
 
   def set_tweet
