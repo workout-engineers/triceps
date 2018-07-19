@@ -1,13 +1,9 @@
 class Tweet < ApplicationRecord
   belongs_to :user
+  attr_accessor :current_user
 
   def correct_user
-    @tweet = Tweet.find(params[:id])
-    if @tweet.user_id == current_user.id
-      return true
-    else
-      redirect_to user_path(current_user)
-    end
+    return true if user_id == current_user.id
   end
 end
 

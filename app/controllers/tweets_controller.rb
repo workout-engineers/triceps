@@ -1,5 +1,6 @@
 class TweetsController < ApplicationController
-  before_action :set_tweet, only: %i[update destroy]
+  before_action :set_tweet, only: %i[edit update destroy]
+  before_action :false_user_redirect, only: %i[edit update destroy]
 
   def index; end
 
@@ -15,16 +16,14 @@ class TweetsController < ApplicationController
   end
 
   def edit
-    if correct_user
-    end
   end
 
   def update
-    @tweet.update(tweet_params) if correct_user
+    @tweet.update(tweet_params)
   end
 
   def destroy
-    @tweet.destroy if correct_user
+    @tweet.destroy
   end
 
   def show; end
@@ -37,5 +36,17 @@ class TweetsController < ApplicationController
 
   def set_tweet
     @tweet = Tweet.find(params[:id])
+    @tweet.current_user = current_user
+  end
+
+  def false_user_redirect
+    unless @tweet.correct_user
+      redirect_to user_path(current_user)
+    end
   end
 end
+
+
+
+
+
