@@ -22,7 +22,6 @@ gem 'haml-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
-gem 'slim-rails'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
@@ -30,7 +29,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rubocop'
   gem 'selenium-webdriver'
-  gem 'slim_lint'
 end
 
 group :development do
