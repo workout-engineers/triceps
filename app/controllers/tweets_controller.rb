@@ -35,14 +35,6 @@ class TweetsController < ApplicationController
     params.require(:tweet).permit(:quote, :book_id, :comment).merge(user_id: current_user.id)
   end
 
-  def auth_user
-    unless current_user
-      flash[:danger] = '投稿するにはログインが必要です。'
-      redirect_to new_user_registration_path
-      # TODO: 人気の投稿一覧画面ができたらリダイレクト先変更
-    end
-  end
-
   def set_tweet
     @tweet = Tweet.find(params[:id])
   end
