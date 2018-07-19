@@ -6,4 +6,3 @@ class Tweet < ApplicationRecord
     return true if user_id == current_user.id
   end
 end
-

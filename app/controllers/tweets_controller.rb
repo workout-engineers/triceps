@@ -15,8 +15,7 @@ class TweetsController < ApplicationController
     # TODO: トップページが出来次第、renderを実装
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     @tweet.update(tweet_params)
@@ -40,13 +39,6 @@ class TweetsController < ApplicationController
   end
 
   def false_user_redirect
-    unless @tweet.correct_user
-      redirect_to user_path(current_user)
-    end
+    redirect_to user_path(current_user) unless @tweet.correct_user
   end
 end
-
-
-
-
-
