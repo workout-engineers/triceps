@@ -2,7 +2,9 @@ class TweetsController < ApplicationController
   before_action :set_tweet, only: %i[edit update destroy]
   before_action :false_user_redirect, only: %i[edit update destroy]
 
-  def index; end
+  def index
+    @tweets = current_user.tweets
+  end
 
   def new
     return auth_user unless current_user

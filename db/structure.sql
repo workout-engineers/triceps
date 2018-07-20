@@ -82,28 +82,17 @@ CREATE TABLE `favorite_books` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
-DROP TABLE IF EXISTS `followers`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `followers` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) DEFAULT NULL COMMENT 'ユーザーのid',
-  `followed_user_id` int(11) NOT NULL COMMENT '上記ユーザーがフォローされている人のid',
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `follows`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `follows` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) DEFAULT NULL COMMENT 'ユーザーのid',
-  `following_user_id` int(11) NOT NULL COMMENT '上記ユーザーがフォローしている人のid',
+  `following_user_id` int(11) DEFAULT NULL COMMENT 'フォローしているユーザーのid',
+  `followed_user_id` int(11) NOT NULL COMMENT 'フォローされている人のid',
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `index_follows_on_following_user_id_and_followed_user_id` (`following_user_id`,`followed_user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `likes`;
@@ -212,7 +201,6 @@ INSERT INTO `schema_migrations` (version) VALUES
 ('20180618083218'),
 ('20180618083454'),
 ('20180618084036'),
-('20180618084401'),
 ('20180618084746'),
 ('20180618085915'),
 ('20180618092727'),
