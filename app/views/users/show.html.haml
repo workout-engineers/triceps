@@ -4,12 +4,13 @@
   .scr-user-name
     = @user.name
   .scr-user-status
-    .userp-following.scr-status
-      フォロー中
-    .userp-notyetfollow.scr-status
-      フォローする
-    .userp-mysetting.scr-status
-      設定
+    = link_to "フォローする", follow_path, method: :post, class: "userp-notyetfollow scr-status"
+    / .userp-following.scr-status
+    /   フォロー中
+    / .userp-notyetfollow.scr-status
+    /   フォローする
+    / .userp-mysetting.scr-status
+    /   設定
 / ユーザー情報
 .user-page-info
   / 左サイド
@@ -18,12 +19,13 @@
     .userp-name
       = @user.name
     .userp-status
-      .userp-following
-        フォロー中
-      .userp-notyetfollow
-        フォローする
-      .userp-mysetting
-        設定
+      = link_to "フォローする", follow_path, method: :post, class: "userp-notyetfollow scr-status"
+      / .userp-following
+      /   フォロー中
+      / .userp-notyetfollow
+      /   フォローする
+      / .userp-mysetting
+      /   設定
   / 中央サイド
   .sp-user-info-wrapper
     / PCでの中央サイド
