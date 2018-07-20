@@ -1,0 +1,75 @@
+/ コンテンツのラッパー
+.wrapper
+  / 投稿
+  .tweets
+    - @tweets.each do |tweet|
+      .tweet
+        .face
+        .content
+          .user-name
+            = current_user.name
+          .quote
+            = tweet.quote
+          .source
+            .book-title
+              『サピエンス全史（上）』
+            .author-name
+              ユヴァル・ノア・ハラリ
+          .evaluation
+            .super-iine
+              .super-iine-icon
+                %i.fa.fa-heart
+              .super-iine-count
+                6
+            .nomal-iine
+              .nomal-iine-icon
+                %i.fa.fa-star
+              .nomal-iine-count
+                22
+            .share
+              .share-icon
+                %i.fa.fa-retweet
+              .share-count
+                12
+        .tweet-space
+
+  / 右側ユーザー情報
+  .user-info
+    / ユーザーの顔写真と名前
+    .user-face-name
+      .user-face-right
+      .user-name-right
+        = current_user.name
+    / 投稿数、フォロー、フォロワー
+    .user-counts
+      .tweet-counts
+        .tweet-tag
+          投稿数
+        .tweet-count-number
+          223
+      .follow-counts
+        .follow-tag
+          フォロー
+        .follow-count-number
+          127
+      .follower-counts
+        .follower-tag
+          フォロワー
+        .follower-count-number
+          98
+    / 好きな著者、本
+    .user-favorites
+      .favorite-authors
+        .favorite-authors-tag
+          好きな著者
+        .favorite-authors-name
+          村上春樹、伊藤計劃、東浩紀
+      .favorite-books
+        .favorite-books-tag
+          好きな本
+        .favorite-books-name
+          %span.fav-book> ジェノサイド
+          、
+          %span.fav-book> サピエンス全史
+          、
+          %span.fav-book 虐殺器官
