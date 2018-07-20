@@ -1,0 +1,36 @@
+%header
+  .logo-sb
+    ロゴ
+  %ul.left-part
+    %li.header-menu
+      %i.fa.fa-home 投稿一覧
+    %li.header-menu
+      %i.fa.fa-star 人気
+  .header-user-menu
+    = current_user.name
+    %i.fa.fa-caret-down
+    .header-my-menu
+      = link_to "マイページ", user_path(current_user), class: ".to-mypage", data: {"turbolinks" => false}
+      = link_to "通知", class: ".to-notice"
+      = link_to "ログアウト",destroy_user_session_path(current_user), method: :delete, class: ".to-logout"
+  .left-part-sb
+    %ul
+      %li.header-menu-sb
+        %i.fa.fa-home
+      %li.header-menu-sb
+        %i.fa.fa-star
+    .header-user-menu-sb
+      = current_user.name
+      %i.fa.fa-caret-down
+      .header-my-menu
+        = link_to "マイページ", user_path(current_user), class: ".to-mypage", data: {"turbolinks" => false}
+        = link_to "通知", class: ".to-notice"
+        = link_to "ログアウト",destroy_user_session_path(current_user), method: :delete, class: ".to-logout"
+    .header-user-info
+      顔
+  .logo
+    ロゴ
+  .right-part
+    %input{type: "text", class: "search-window", placeholder: "&#xf002;キーワードで検索"}
+    .tweet-btn
+      = link_to "投稿する", new_tweet_path

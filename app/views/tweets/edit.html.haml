@@ -1,6 +1,6 @@
 .tweet-create-part
   .tc-logo
-    投稿する
+    編集する
   = form_for(@tweet) do |f|
     = f.label "好きな一節"
     = f.text_area :quote, placeholder: "好きな一節を入力してください。", class: "tc-inputs quote-create", rows: "4", wrap: "soft"

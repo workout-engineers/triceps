@@ -3,6 +3,16 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name ,:agreement])
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[name agreement])
+  end
+
+  private
+
+  def auth_user
+    unless current_user
+      flash[:danger] = '投稿するにはログインが必要です。'
+      redirect_to new_user_registration_path
+      # TODO: 人気の投稿一覧画面ができたらリダイレクト先変更
+    end
   end
 end

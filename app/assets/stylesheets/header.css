@@ -1,6 +1,8 @@
 /*ヘッダー*/
 
 header{
+  display: flex;
+  align-items: center;
   position: relative;
   position: fixed;
   z-index: 1;
@@ -16,14 +18,13 @@ header{
 /*ヘッダー(左側)*/
 
 ul{
-  display: inline-block;
-  padding-top: 6px;
+  display: flex;
+  list-style: none;
 }
 
 .header-menu{
-  display: inline-block;
   text-align: center;
-  margin-right: 2px;
+  margin-right: 6px;
   background: #D7EEFF;
   padding: 10px;
   width: 98px;
@@ -31,17 +32,55 @@ ul{
   box-shadow: 2px 2px 4px #444444 inset;
 }
 
+.header-user-menu{
+  position: relative;
+  padding: 7px 0;
+  margin-left: 5px;
+  width: 110px;
+}
+
+.header-user-menu-sb{
+  padding: 7px 0;
+}
+
+.header-my-menu{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 30px;
+  background: #ddd;
+  font-size: 18px;
+  text-align: center;
+  padding: 1px 7px;
+  border-radius: 2px;
+}
+
+.to-mypage{
+  padding: 6px 3px 4px;
+}
+
+.to-notice ,.to-logout{
+  padding: 5px 3px 3px;
+}
+
+.to-mypage ,.to-notice{
+  border-bottom: dashed 2px #333;
+}
+
 .left-part-sb{
   display: none;
 }
 
+.left-part-sb ul{
+  display: flex;
+}
+
 .header-menu-sb{
-  display: inline-block;
   text-align: center;
   margin-right: 10px;
   background: #D7EEFF;
-  padding: 6px 10px;
-  border-radius: 30px;
+  padding: 10px 15px;
+  border-radius: 40px;
   box-shadow: 2px 2px 4px #444444 inset;
 }
 
@@ -53,15 +92,12 @@ ul{
   padding: 10px;
   margin-left: 11px;
   text-align: center;
-  margin-top: 6px;
 }
 
 .logo{
   background: #66FFFF;
-  display: inline-block;
   padding: 10px;
   text-align: center;
-  margin-top: 6px;
   position: absolute;
   right: 50%;
 }
@@ -69,10 +105,8 @@ ul{
 /*ヘッダー(右側)*/
 
 .right-part{
-  display: inline-block;
   position: absolute;
   right: 40px;
-  margin-top: 9px;
 }
 
 .search-window{
@@ -139,13 +173,34 @@ ul{
 /*＜ヘッダー＞ブラウザ<750px>以下*/
 
 @media screen and (max-width: 840px) {
+
+  ul{
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+    -webkit-padding-start: 0px;
+  }
+
   .left-part{
     display: none;
   }
 
-  .left-part-sb{
-    display: inline-block;
+  .header-user-menu{
+    display: none;
   }
+
+  .header-my-menu{
+    top: 45px;
+  }
+
+  .left-part-sb{
+    display: flex;
+    align-items: center;
+  }
+
+  .tweet-btn{
+    margin-left: 10px;
+  }
+
 }
 
 /*スマホバージョン*/
@@ -165,17 +220,13 @@ ul{
   }
 
   .right-part{
+    display: flex;
+    align-items: center;
     right: 38%;
-    margin-top: 1.5px;
-  }
-
-  .serch-window{
-    margin-bottom: 2px;
   }
 
   .tweet-btn{
     margin-left: 6px;
-    margin-top: 2.5px
   }
 
 }

@@ -41,19 +41,53 @@
 }
 
 .content{
+  position: relative;
   width: 400px;
   margin-left: 15px;
 }
 
 .user-name{
-  display: inline-block;
   padding-top: 30px;
   font-weight: bold;
 }
 
+.fa-bars{
+  position: absolute;
+  top: 30px;
+  right: 1px;
+  color: #bbb;
+}
+
+ /*ツイートの編集、削除*/
+
+.tweet-edit-destroy{
+  position: absolute;
+  right: 13px;
+  top: 34px;
+  display: inline-block;
+  background: #eee;
+  padding: 0 4px;
+  text-align: center;
+  font-size: 12px;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+}
+
+.tweet-edit{
+  padding: 2px 10px;
+  border-bottom: dashed 1px #999;
+}
+
+.tweet-destroy{
+  padding: 2px 5px 3px;
+}
+
+/*ーーーー*/
+
 .quote{
   display: inline-block;
-  padding-top: 15px;
+  padding-top: 10px;
   font-size: 13px;
 }
 

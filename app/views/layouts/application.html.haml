@@ -12,32 +12,10 @@
     %p.alert
       = alert
 
-  %header
-    .logo-sb
-      ロゴ
-    %ul.left-part
-      %li.header-menu
-        %i.fa.fa-home 投稿一覧
-      %li.header-menu
-        %i.fa.fa-bell 通知
-      %li.header-menu
-        %i.fa.fa-star 人気の投稿
-    .left-part-sb
-      %ul
-        %li.header-menu-sb
-          %i.fa.fa-home
-        %li.header-menu-sb
-          %i.fa.fa-bell
-        %li.header-menu-sb
-          %i.fa.fa-star
-      .header-user-info
-        顔
-    .logo
-      ロゴ
-    .right-part
-      %input{type: "text", class: "search-window", placeholder: "&#xf002;キーワードで検索"}
-      .tweet-btn
-        投稿する
+  -if current_user
+    = render "layouts/header_login"
+  -else
+    = render "layouts/header_no_login"
 
   = yield
 

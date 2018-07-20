@@ -11,6 +11,11 @@
   flex-direction: column;
 }
 
+.edit_tweet{
+  display: flex;
+  flex-direction: column;
+}
+
 .tc-logo{
   text-align: center;
   font-size: 22px;
