@@ -91,7 +91,8 @@ CREATE TABLE `followers` (
   `followed_user_id` int(11) NOT NULL COMMENT '上記ユーザーがフォローされている人のid',
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `index_followers_on_user_id_and_followed_user_id` (`user_id`,`followed_user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `follows`;
@@ -103,7 +104,8 @@ CREATE TABLE `follows` (
   `following_user_id` int(11) NOT NULL COMMENT '上記ユーザーがフォローしている人のid',
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `index_follows_on_user_id_and_following_user_id` (`user_id`,`following_user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `likes`;

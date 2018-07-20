@@ -5,6 +5,8 @@ class CreateFollows < ActiveRecord::Migration[5.1]
       t.integer :following_user_id, null: false, comment:"上記ユーザーがフォローしている人のid"
 
       t.timestamps
+
+      t.index [:user_id, :following_user_id], unique: true
     end
   end
 end
