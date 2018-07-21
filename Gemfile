@@ -17,12 +17,12 @@ gem 'turbolinks', '~> 5'
 
 gem 'config'
 gem 'devise'
+gem 'dotenv-rails'
 gem 'font-awesome-rails'
 gem 'haml-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
-gem 'dotenv-rails'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
