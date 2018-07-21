@@ -82,30 +82,6 @@ CREATE TABLE `favorite_books` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
-DROP TABLE IF EXISTS `followers`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `followers` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) DEFAULT NULL COMMENT 'ユーザーのid',
-  `followed_user_id` int(11) NOT NULL COMMENT '上記ユーザーがフォローされている人のid',
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-DROP TABLE IF EXISTS `follows`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `follows` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) DEFAULT NULL COMMENT 'ユーザーのid',
-  `following_user_id` int(11) NOT NULL COMMENT '上記ユーザーがフォローしている人のid',
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `likes`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
@@ -117,6 +93,21 @@ CREATE TABLE `likes` (
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_likes_on_user_id_and_tweet_id` (`user_id`,`tweet_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `relationships`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `relationships` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `follower_id` int(11) DEFAULT NULL,
+  `following_id` int(11) DEFAULT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `index_relationships_on_follower_id_and_following_id` (`follower_id`,`following_id`),
+  KEY `index_relationships_on_follower_id` (`follower_id`),
+  KEY `index_relationships_on_following_id` (`following_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `schema_migrations`;
@@ -211,13 +202,12 @@ INSERT INTO `schema_migrations` (version) VALUES
 ('20180618082912'),
 ('20180618083218'),
 ('20180618083454'),
-('20180618084036'),
-('20180618084401'),
 ('20180618084746'),
 ('20180618085915'),
 ('20180618092727'),
 ('20180618093114'),
 ('20180624081812'),
-('20180625060037');
+('20180625060037'),
+('20180721160501');
 
 
