@@ -13,4 +13,16 @@ class User < ApplicationRecord
                                    inverse_of: :followers
   has_many :followings, through: :active_relationships
   has_many :followers, through: :passive_relationships
+
+  # ユーザーをフォローする
+  def follow(other_user)
+    active_relationships.create(followed_id: other_user.id)
+  end
+
+  # ユーザーをフォロー解除する
+  def unfollow(other_user)
+    active_relationships.find_by(followed_id: other_user.id).destroy
+  end
+
+
 end
