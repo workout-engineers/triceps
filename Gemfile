@@ -17,6 +17,7 @@ gem 'turbolinks', '~> 5'
 
 gem 'config'
 gem 'devise'
+gem 'dotenv-rails'
 gem 'font-awesome-rails'
 gem 'haml-rails'
 gem 'jbuilder', '~> 2.5'
