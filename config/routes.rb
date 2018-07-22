@@ -3,4 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
   resources :tweets
   resources :users, only: [:show]
+  resources :users do
+    member do
+      get :followings, :followers
+    end
+  end
 end
