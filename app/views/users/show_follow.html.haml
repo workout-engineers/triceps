@@ -20,11 +20,16 @@
               / スマホブラウザのステータスボタン
               - if user == current_user
               - elsif current_user.following?(user)
-                .sp-fs-following
-                  フォロー中
+                = form_for(current_user.active_relationships.find_by(following_id: user.id), method: :delete) do |f|
+                  = f.submit "フォロー中", class: "sp-fs-following"
+                / .sp-fs-following
+                /   フォロー中
               - else
-                .sp-fs-notyetfollow
-                  フォローする
+                = form_for(current_user.active_relationships.build) do |f|
+                  = hidden_field_tag :following_id, user.id
+                  = f.submit "フォローする", class: "sp-fs-notyetfollow"
+                / .sp-fs-notyetfollow
+                /   フォローする
             .follower-favorites
               .follower-fav-authors-logo
                 好きな著者
@@ -39,8 +44,13 @@
           .follower-status
             - if user == current_user
             - elsif current_user.following?(user)
-              .fs-following
-                フォロー中
+              = form_for(current_user.active_relationships.find_by(following_id: user.id), method: :delete) do |f|
+                = f.submit "フォロー中", class: "fs-following"
+              / .fs-following
+              /   フォロー中
             - else
-              .fs-notyetfollow
-                フォロする
+              = form_for(current_user.active_relationships.build) do |f|
+                = hidden_field_tag :following_id, user.id
+                = f.submit "フォローする", class: "fs-notyetfollow"
+              / .fs-notyetfollow
+              /   フォロする
