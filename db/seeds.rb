@@ -1,5 +1,5 @@
 99.times do |_n|
-  users = [7]
+  users = [1, 2]
 
   quote = Faker::Lorem.sentence
   comment = Faker::Lorem.sentence
