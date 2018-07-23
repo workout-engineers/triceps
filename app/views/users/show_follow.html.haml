@@ -17,19 +17,6 @@
               .follower-face
               .follower-name
                 = user.name
-              / スマホブラウザのステータスボタン
-              - if user == current_user
-              - elsif current_user.following?(user)
-                = form_for(current_user.active_relationships.find_by(following_id: user.id), method: :delete) do |f|
-                  = f.submit "フォロー中", class: "sp-fs-following"
-                / .sp-fs-following
-                /   フォロー中
-              - else
-                = form_for(current_user.active_relationships.build) do |f|
-                  = hidden_field_tag :following_id, user.id
-                  = f.submit "フォローする", class: "sp-fs-notyetfollow"
-                / .sp-fs-notyetfollow
-                /   フォローする
             .follower-favorites
               .follower-fav-authors-logo
                 好きな著者
@@ -41,16 +28,4 @@
                 %span.follower-fav-book> サピエンス全史
                 、
                 %span.follower-fav-book 愛とは何か
-          .follower-status
-            - if user == current_user
-            - elsif current_user.following?(user)
-              = form_for(current_user.active_relationships.find_by(following_id: user.id), method: :delete) do |f|
-                = f.submit "フォロー中", class: "fs-following"
-              / .fs-following
-              /   フォロー中
-            - else
-              = form_for(current_user.active_relationships.build) do |f|
-                = hidden_field_tag :following_id, user.id
-                = f.submit "フォローする", class: "fs-notyetfollow"
-              / .fs-notyetfollow
-              /   フォロする
+

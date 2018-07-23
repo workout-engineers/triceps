@@ -18,12 +18,13 @@
     .userp-name
       = @user.name
     .userp-status
-      .userp-following
-        フォロー中
-      .userp-notyetfollow
-        フォローする
-      .userp-mysetting
-        設定
+      - if @user == current_user
+        .userp-mysetting
+          設定
+      - elsif current_user.following?(@user)
+        = render "unfollow", user: @user
+      - else
+        = render "follow", user: @user
   / 中央サイド
   .sp-user-info-wrapper
     / PCでの中央サイド
