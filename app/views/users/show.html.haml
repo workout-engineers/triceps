@@ -33,17 +33,17 @@
         .userp-tweets-count-logo
           投稿数
         .userp-tweets-count-number
-          122
+          = @tweets.count
       .userp-follow-count
         .userp-follow-count-logo
           フォロー
         .userp-follow-count-number
-          189
+          = @user.followings.count
       .userp-follower-count
         .userp-follower-count-logo
           フォロワー
         .userp-follower-count-number
-          140
+          = @user.followers.count
     / スマホでは、PCの右サイドを中央に表示
     .sp-userp-favorites
       .userp-favorite-authors-logo

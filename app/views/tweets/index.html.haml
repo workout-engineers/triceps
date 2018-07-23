@@ -46,17 +46,17 @@
         .tweet-tag
           投稿数
         .tweet-count-number
-          223
+          = current_user.tweets.count
       .follow-counts
         .follow-tag
           フォロー
         .follow-count-number
-          127
+          = current_user.followings.count
       .follower-counts
         .follower-tag
           フォロワー
         .follower-count-number
-          98
+          = current_user.followers.count
     / 好きな著者、本
     .user-favorites
       .favorite-authors
