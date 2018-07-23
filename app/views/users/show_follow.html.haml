@@ -13,10 +13,11 @@
       - @users.each do |user|
         .one-follower
           .follower
-            .follower-face-name
-              .follower-face
-              .follower-name
-                = user.name
+            = link_to(user, data: {"turbolinks" => false}) do
+              .follower-face-name
+                .follower-face
+                .follower-name
+                  = user.name
             .follower-favorites
               .follower-fav-authors-logo
                 好きな著者
