@@ -43,20 +43,23 @@
     / 投稿数、フォロー、フォロワー
     .user-counts
       .tweet-counts
-        .tweet-tag
-          投稿数
-        .tweet-count-number
-          = current_user.tweets.count
+        = link_to current_user do
+          .tweet-tag
+            投稿数
+          .tweet-count-number
+            = current_user.tweets.count
       .follow-counts
-        .follow-tag
-          フォロー
-        .follow-count-number
-          = current_user.followings.count
+        = link_to followings_user_path(current_user) do
+          .follow-tag
+            フォロー
+          .follow-count-number
+            = current_user.followings.count
       .follower-counts
-        .follower-tag
-          フォロワー
-        .follower-count-number
-          = current_user.followers.count
+        = link_to followers_user_path(current_user) do
+          .follower-tag
+            フォロワー
+          .follower-count-number
+            = current_user.followers.count
     / 好きな著者、本
     .user-favorites
       .favorite-authors

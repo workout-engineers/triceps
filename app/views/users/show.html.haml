@@ -35,15 +35,17 @@
         .userp-tweets-count-number
           = @tweets.count
       .userp-follow-count
-        .userp-follow-count-logo
-          フォロー
-        .userp-follow-count-number
-          = @user.followings.count
+        = link_to followings_user_path(@user) do
+          .userp-follow-count-logo
+            フォロー
+          .userp-follow-count-number
+            = @user.followings.count
       .userp-follower-count
-        .userp-follower-count-logo
-          フォロワー
-        .userp-follower-count-number
-          = @user.followers.count
+        = link_to followers_user_path(@user) do
+          .userp-follower-count-logo
+            フォロワー
+          .userp-follower-count-number
+            = @user.followers.count
     / スマホでは、PCの右サイドを中央に表示
     .sp-userp-favorites
       .userp-favorite-authors-logo
