@@ -15,8 +15,6 @@ class UsersController < ApplicationController
 
   def show
     @tweets = @user.tweets.order('created_at DESC')
-    @new_relationship = current_user.active_relationships.build
-    @relationship = current_user.active_relationships.find_by(following_id: @user.id)
   end
 
   private
