@@ -22,9 +22,9 @@
         .userp-mysetting
           設定
       - elsif current_user.following?(@user)
-        = render "unfollow", user: @user
+        = render "unfollow", user: @user, relationship: @relationship
       - else
-        = render "follow", user: @user
+        = render "follow", user: @user, relationship: @new_relatoinship
   / 中央サイド
   .sp-user-info-wrapper
     / PCでの中央サイド
