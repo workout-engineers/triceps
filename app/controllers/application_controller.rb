@@ -15,3 +15,6 @@ class ApplicationController < ActionController::Base
     # TODO: 人気の投稿一覧画面ができたらリダイレクト先変更
   end
 end
+
+
+#よろしくおねがいします
