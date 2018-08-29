@@ -1,0 +1,32 @@
+.who-s-followers-wrapper
+  / 〇〇のフォロワー
+  .who-s-followers
+    .wf-person
+      .wf-face
+      .wf-name
+        = @user.name
+    .wf-logo
+      = @title
+  / フォロワー一覧
+  .followers
+    - if @users.any?
+      - @users.each do |user|
+        .one-follower
+          .follower
+            = link_to(user, data: {"turbolinks" => false}) do
+              .follower-face-name
+                .follower-face
+                .follower-name
+                  = user.name
+            .follower-favorites
+              .follower-fav-authors-logo
+                好きな著者
+              .follower-fav-authors
+                村上春樹、伊藤計劃
+              .follower-fav-books-logo
+                好きな本
+              .follower-fav-books
+                %span.follower-fav-book> サピエンス全史
+                、
+                %span.follower-fav-book 愛とは何か
+

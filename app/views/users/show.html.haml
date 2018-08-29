@@ -18,12 +18,13 @@
     .userp-name
       = @user.name
     .userp-status
-      .userp-following
-        フォロー中
-      .userp-notyetfollow
-        フォローする
-      .userp-mysetting
-        設定
+      - if @user == current_user
+        .userp-mysetting
+          設定
+      - elsif current_user.following?(@user)
+        = render "unfollow", user: @user
+      - else
+        = render "follow", user: @user
   / 中央サイド
   .sp-user-info-wrapper
     / PCでの中央サイド
@@ -32,17 +33,19 @@
         .userp-tweets-count-logo
           投稿数
         .userp-tweets-count-number
-          122
+          = @tweets.count
       .userp-follow-count
-        .userp-follow-count-logo
-          フォロー
-        .userp-follow-count-number
-          189
+        = link_to followings_user_path(@user) do
+          .userp-follow-count-logo
+            フォロー
+          .userp-follow-count-number
+            = @user.followings.count
       .userp-follower-count
-        .userp-follower-count-logo
-          フォロワー
-        .userp-follower-count-number
-          140
+        = link_to followers_user_path(@user) do
+          .userp-follower-count-logo
+            フォロワー
+          .userp-follower-count-number
+            = @user.followers.count
     / スマホでは、PCの右サイドを中央に表示
     .sp-userp-favorites
       .userp-favorite-authors-logo
