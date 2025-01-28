@@ -12,7 +12,6 @@
 }
 
 .userp-following{
-  display: none;
   background: silver;
   padding: 5px 0;
   border-radius: 20px;
@@ -20,7 +19,6 @@
 }
 
 .userp-notyetfollow{
-  /*display: none;*/
   background: #fff;
   padding: 5px 0;
   border-radius: 20px;
@@ -28,7 +26,6 @@
 }
 
 .userp-mysetting{
-  display: none;
   background: silver;
   padding: 5px 0;
   border-radius: 2px;
